@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pria Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script> 
+</head>
+<body>
+
+  <!-- 🔷 Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">PRIA UIUXDESIGNER</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn-talk">Let's talk</a>
+  </div>
+
+  <!-- 🔷 Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h3>Hello it's me</h3>
+      <h1>Pria Tharsini R</h1>
+      <h4>And I'm a <span class="typed-text"></span><span class="cursor">|</span></h4>
+      <p>B.Tech Agricultural Engineering student passionate about bridging the gap between traditional engineering and modern digital design. Currently exploring the fascinating world of UI/UX with Figma while building innovative solutions.</p>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/pria-tharsini-rajamanickam-a33475288/" class="icon" target="_blank">
+          <img src="assets/linkedin icon.png" width="50px" height="50px" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/PriaTharsini-RajaManickam" class="icon" target="_blank">
+          <img src="assets/github icon.png" width="25px" height="25px" alt="GitHub" />
+        </a>
+        <a href="mailto:rpriatharsini3012@gmail.com" class="icon" target="_blank">
+          <img src="assets/gmail icon.png" width="70px" height="30px" alt="Gmail" />
+        </a>
+        <a href="https://wa.me/your-phone-number" class="icon" target="_blank">
+          <img src="assets/whatsapp icon.png" width="70px" height="40px" alt="WhatsApp" />
+        </a>
+      </div>
+
+      <a href="assets/Pria Tharsini R Resume.pdf" class="btn-cv" download>Download CV</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="assets/profile.png" alt="Profile picture of Pria Tharsini R" />
+    </div>
+  </section>
+
+  <!-- 🔷 Typing Animation Script -->
+  <script>
+    const roles = ["Frontend Developer", "UI/UX Designer", "Creative Thinker"];
+    const typedText = document.querySelector(".typed-text");
+    const cursor = document.querySelector(".cursor");
+    let roleIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < roles[roleIndex].length) {
+        typedText.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typedText.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 300);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (roles.length) setTimeout(type, 500);
+    });
+  </script>
+
+
+
+
+  <section id="about" class="about-section">
+    <div class="image-container">
+      <img src="assets/about image.jpg" alt="Profile photo of Pria Tharsini R" class="profile-img" />
+    </div>
+
+    <div class="text-container">
+      <h1 class="title">ABOUT <span>ME</span></h1>
+      <div class="underline"></div>
+
+      <h2 class="heading">Education</h2>
+      <p class="paragraph">
+        I'm a B.Tech Agricultural Engineering student at KIT–Kalaignar Karunanidhi Institute of Technology, Coimbatore, with a graduation year of 2026. While my academic foundation is rooted in agriculture and sustainability, my heart beats for UI/UX design and digital innovation.
+      </p>
+
+      <h2 class="heading">Design Journey</h2>
+      <p class="paragraph">
+        My journey into design began recently with Figma, where I'm constantly exploring and building my creative skills. I believe in the power of design to solve real-world problems, especially in bridging traditional engineering with modern digital experiences.
+      </p>
+      <h2 class="heading">Technical Skills</h2>
+      <p class="paragraph">
+        Beyond design, I'm equipped with technical abilities in CATIA, HTML, CSS, and Python. My hands-on experience includes smart agriculture projects and IoT implementations, showcasing my commitment to innovation in both agriculture and technology.
+      </p>
+    </div>
+  </section>
+
+
+
+
+  <section id="skills" class="skills-section">
+    <h2 class="skills-title">SKILLS</h2>
+    <p class="skills-subtitle">
+      A blend of traditional engineering skills and modern digital capabilities, constantly evolving and learning new technologies.
+    </p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma logo">
+        <h3>UI/UX DESIGN</h3>
+        <p>Figma, Design Thinking</p>
+        <span class="tag intermediate">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-icon" src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Dev logo">
+        <h3>Web Development</h3>
+        <p>HTML, CSS</p>
+        <span class="tag intermediate">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-icon catia-icon" src="assets/catia.png" alt="CATIA logo">
+        <h3>CAD Design</h3>
+        <p>Catia, 3D Modeling</p>
+        <span class="tag intermediate">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python logo">
+        <h3>Programming</h3>
+        <p>Python, Basics</p>
+        <span class="tag intermediate">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-icon" src="assets/canva.png" alt="Canva logo">
+        <h3>Designing</h3>
+        <p>Canva, Design Thinking</p>
+        <span class="tag beginner">Beginner</span>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  
+  <section id="projects" class="projects-section">
+    <h2 class="projects-title">PROJECTS</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="badge">Funded Project</div>
+        <h3 class="project-title">Goat Droppings Collector</h3>
+        <p class="project-desc">
+          An innovative agricultural solution funded by Vidhya Incubation Center to improve farm hygiene and reduce manual labor.
+        </p>
+        <h4 class="features-heading">Key Features</h4>
+        <ul>
+          <li>Improved hygiene in goat farms</li>
+          <li>Reduced manual labor by 70%</li>
+          <li>Built with cost-effective materials</li>
+          <li>Sustainable farming solution</li>
+        </ul>
+        <div class="tags">
+          <span>Agriculture</span>
+          <span>Innovation</span>
+          <span>Sustainability</span>
+        </div>
+        <button class="view-btn">View Details</button>
+      </div>
+
+      <div class="project-card">
+        <div class="badge in-progress">In Progress</div>
+        <h3 class="project-title">UI/UX Design Portfolio</h3>
+        <p class="project-desc">
+          Collection of design explorations and learning projects created with Figma, showcasing my journey into digital design.
+        </p>
+        <h4 class="features-heading">Key Features</h4>
+        <ul>
+          <li>Mobile app interfaces</li>
+          <li>Web design concepts</li>
+          <li>User experience research</li>
+          <li>Design system creation</li>
+        </ul>
+        <div class="tags">
+          <span>Figma</span>
+          <span>UI/UX</span>
+          <span>Design</span>
+          <span>Prototyping</span>
+        </div>
+        <button class="view-btn">View Details</button>
+      </div>
+
+      <div class="project-card">
+        <div class="badge mini">Mini Project</div>
+        <h3 class="project-title">Solar Multifood Compact Hybrid Dryer</h3>
+        <p class="project-desc">
+          A smart drying system that uses solar and electric power to dry fruits, vegetables, and other foods.
+        </p>
+        <h4 class="features-heading">Key Features</h4>
+        <ul>
+          <li>Small and easy to move anywhere</li>
+          <li>Saves energy and money</li>
+          <li>Helps farmers store food safely</li>
+          <li>Keep food fresh for longer time</li>
+        </ul>
+        <div class="tags">
+          <span>Food Preservation</span>
+          <span>Renewable Energy</span>
+        </div>
+        <button class="view-btn">View Details</button>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <section id = "experience" class="experience-section">
+    <h2 class="experience-title">EXPERIENCE & ACHIEVEMENTS</h2>
+
+    <div class="experience-card">
+      <div class="exp-left">
+        <h3>Internship at Velvizhi Mushroom Farm and Training Academy</h3>
+        <p>Learned mushroom cultivation and post-harvest handling techniques.</p>
+      </div>
+      <div class="exp-right">
+        <span class="duration-label">Duration</span>
+        <p>15 Days</p>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <div class="exp-left">
+        <h3>Python Full Stack Developer – Virtual Internship</h3>
+        <p>Gained frontend/backend knowledge with Python, HTML, CSS.</p>
+      </div>
+      <div class="exp-right">
+        <span class="duration-label">Duration</span>
+        <p>Oct–Dec 2024</p>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <div class="exp-left">
+        <h3>CodeChef – Silver Badge</h3>
+        <p>Solved challenges in 25+ contests; enhanced logic & problem-solving skills.</p>
+      </div>
+      <div class="exp-right">
+        <span class="duration-label">Duration</span>
+        <p>Ongoing</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2><span>LET'S</span> CONNECT</h2>
+    <p>I'm always excited to collaborate on innovative projects or discuss opportunities<br>
+    in UI/UX design and agricultural technology. Let's build something amazing together!</p>
+
+    <div class="contact-links">
+      <p class="left-link">Get In Touch</p>
+      <p class="right-link">Send a Message</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-box">
+        <h3><span>Contact</span> Info</h3>
+        <div class="contact-info">
+          <p><i class="fas fa-location-dot icon"></i> Aruppukottai, Virudhunagar<br>(District)-626101, Tamil Nadu</p>
+          <p><i class="fas fa-phone icon"></i> +91 7397075253</p>
+          <p><i class="fa-solid fa-envelope icon" style="color:#ea4335"></i> rpriatharsini3012@gmail.com</p>
+        </div>
+      </div>
+
+      
+      <div class="contact-box">
+  <h3><span>Contact</span> Me</h3>
+  <form class="contact-form" onsubmit="sendEmail(event)">
+    <input type="text" id="firstName" placeholder="First Name" required />
+    <input type="text" id="lastName" placeholder="Last Name" required />
+    <input type="text" id="number" placeholder="Number" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <textarea id="message" placeholder="Your message" required></textarea>
+    <button type="submit" class="submit-btn">
+      <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+  </form>
+</div>
+</div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>@ 2024 Pria Tharsini R. Designed with passion for innovation and creativity.</p>
+      <div class="footer-icons">
+        <a href="https://www.linkedin.com/in/pria-tharsini-rajamanickam-a33475288/" class="icon" target="_blank">
+          <img src="assets/linkedin icon.png" width="50px" height="50px" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/PriaTharsini-RajaManickam" class="icon" target="_blank">
+          <img src="assets/github icon.png" width="25px" height="25px" alt="GitHub" />
+        </a>
+        <a href="mailto:rpriatharsini3012@gmail.com" class="icon">
+          <img src="assets/gmail icon.png" width="70px" height="30px" alt="Gmail" />
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
